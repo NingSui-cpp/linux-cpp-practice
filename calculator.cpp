@@ -6,7 +6,6 @@ using namespace std;
 int main(){
 	double a, b;
 	char op;
-	int power;
 	string first;
 	cout << "The symbol for a square is ^2" << endl << "The symbol for a square root is r" << endl;
 	while(true){
@@ -39,9 +38,6 @@ int main(){
 					break;
 				case '^':
 					cout << pow(a,b) << endl;
-					break;
-				case 'r':
-					cout << sqrt (a) << endl;
 					break;
 				default:
 					cout << "Invalid operator" << endl;
