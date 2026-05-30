@@ -1,0 +1,17 @@
+# Linux C++ Practice
+
+This repository contains my Linux and C++ practice projects.
+
+Although I learned C++ during my first two years in university, this is my first time developing C++ projects using:
+
+- Ubuntu
+- Vim
+- g++
+- Git/GitHub
+
+Current projects:
+
+- hello.cpp
+- calculator.cpp
+
+This repository records my journey of learning Linux-based development and embedded systems.
