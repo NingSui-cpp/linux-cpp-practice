@@ -3,52 +3,73 @@
 #include <string>
 using namespace std;
 
+double power( double num, double n);
+
 int main(){
-	double a, b;
-	char op;
-	string first;
-	cout << "The symbol for a square is ^2" << endl << "The symbol for a square root is r" << endl;
-	while(true){
-		cin >> a >> op;
-		if(op == 'r'){
-			cout << sqrt(a) << endl;
-		}
-		else{
-			cin >> b;
-			switch (op){
-				case '+':
-					cout << a + b << endl;
-					break;
-				case '-':
-					cout << a - b << endl;
-					break;	
-				case '*':
-					cout << a * b << endl;
-					break;
-				case '/':
-					if(b == 0){
-						cout << "The denominator cannot be zero" << endl;
-					}
-					else{
-						cout << a / b << endl;
-					}
-					break;
-				case '%':
-					cout <<(int) a %(int) b << endl;
-					break;
-				case '^':
-					cout << pow(a,b) << endl;
-					break;
-				default:
-					cout << "Invalid operator" << endl;
-			}
-		}
-		cout << "Do you want to quit or continue? type quit if you want to quit, type continue if you want to continue." 
-			<< endl;
-		cin >> first;
-		if(first == "quit"){
-			break;
-		}
-	}
-	return 0;
+    double a, b;
+    string op;  
+    while(true){
+        cout << "Type help to show the operations, or type calculate to start, or type quit to exit." << endl;
+	cout << "Enter expression: " << endl;
+        cin >> op;
+        if(op == "help"){
+            cout << "Available Operations:" << endl;
+            cout <<"+ Addition"<< endl;
+            cout << "- Subtraction" << endl;
+            cout <<"* Multiplication" << endl;
+            cout << "/ Division" << endl;
+            cout << "% Modulo" << endl;
+            cout << "^ Power" << endl;
+            cout << "r Square Root" << endl;
+        }
+        else if(op == "calculate"){
+            cin >> a >> op;
+            if(op == "r"){
+                cout << sqrt(a) << endl;
+            }
+            else{
+                cin >> b;
+                if(op == "+"){
+                cout << a + b << endl;
+                }
+                else if(op == "-"){
+                cout << a - b << endl;
+                }
+                else if(op == "*"){
+                    cout << a * b << endl;
+                }
+                else if(op == "/"){
+                    if(b == 0){
+                            cout << "The denominator can't be zero" << endl;
+                    }
+                    else{
+                            cout << a/b << endl;
+                    }
+                }
+                else if(op == "%"){
+                    if(b == 0){
+                        cout << "The denominator can't be zero" << endl;
+                    }
+                    else
+                        cout << (int) a % (int) b << endl;
+                }
+                else if(op == "^"){
+                        cout << power(a,b) << endl;
+                }
+            }        
+        }
+        else if (op == "quit"){
+            break;
+        }
+        else{
+            cout << "Unknown command" << endl;
+        }
+    }
+return 0;
 }
+
+double power( double num, double n) {
+        return pow(num,n);
+}
+
+
